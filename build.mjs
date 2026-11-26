@@ -1,0 +1,11 @@
+import { readFile, writeFile } from 'node:fs/promises';
+const source = await readFile(new URL('./calculators.cjs', import.meta.url), 'utf8');
+const marker = "})(typeof globalThis !== 'undefined' ? globalThis : this, function () {";
+const split = source.indexOf(marker);
+if (split < 0 || !source.trimEnd().endsWith('});')) throw new Error('Unexpected upstream wrapper');
+const comment = source.slice(0, source.indexOf('(function (root, factory)'));
+const body = source.slice(split + marker.length).trimEnd().slice(0, -3);
+const exports = 'export const {termLoan,lineOfCreditDraw,factorAdvance,invoiceFactoring,debtServiceCoverage,periodicApr} = tools;\nexport default tools;\n';
+await writeFile(new URL('./index.mjs', import.meta.url), comment + 'const tools = (function () {' + body + '})();\n' + exports);
+await writeFile(new URL('./browser.js', import.meta.url), source);
+console.log('Built ESM module and browser script from calculators.cjs');

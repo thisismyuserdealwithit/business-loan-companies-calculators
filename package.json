@@ -1,0 +1,17 @@
+{
+  "name": "business-loan-companies-calculators",
+  "version": "2.0.1",
+  "private": true,
+  "description": "Business financing planning calculations with explicit repayment assumptions.",
+  "main": "./calculators.cjs",
+  "module": "./index.mjs",
+  "browser": "./browser.js",
+  "exports": {".": {"import": "./index.mjs", "require": "./calculators.cjs"}},
+  "files": ["calculators.cjs", "index.mjs", "browser.js", "LICENSE", "README.md", "CHANGELOG.md", "PROVENANCE.json"],
+  "homepage": "https://businessloancompanies.com/free-business-loan-tools/",
+  "author": "Business Loan Companies",
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {"build": "node build.mjs", "test": "node --test test-calculators.cjs"},
+  "engines": {"node": ">=18"},
+  "keywords": ["business", "finance", "calculator", "amortization", "cash-flow"]
+}
