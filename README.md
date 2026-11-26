@@ -48,6 +48,8 @@ Integer period counts are limited to 1 through 10,000. Origination fees must be 
 
 The [63 invoice payment scenarios](INVOICE-SCENARIOS.md) extend the exercise with a CSV and a reproducible generator. Compare day 14 and day 15 to see how the timing changes the payroll balance.
 
+[The missing document](the-missing-document.html) is an offline, three-case activity about choosing evidence for calculator inputs. Download the HTML file and open it in a browser. Each case asks which document can establish a fee, a final payment, or a settlement date.
+
 * A 12-month, $10,000 loan at 12% with no fee pays about $888.49 monthly. Total payments are about $10,661.85. A 2% fee reduces proceeds to $9,800 while leaving the scheduled payments unchanged, so the calculated nominal APR rises.
 * A $10,000 draw at 12% for six months pays $100 interest monthly and returns the $10,000 principal in the final month. A 1% allocated fee adds $100 of cost, for a $700 estimated draw cost.
 * A $10,000 factor advance at 1.2 repays $12,000. Over 12 monthly remittances it pays $1,000 monthly. The 20% total charge is not its APR.
